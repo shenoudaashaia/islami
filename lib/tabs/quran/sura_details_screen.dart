@@ -13,6 +13,10 @@ class suraDetailsScreen extends StatelessWidget {
                 image: AssetImage("assets/images/default_bg.png"))),
         child: Scaffold(
           appBar: AppBar(title: Text(args.suraName)),
+          body:Container(
+            padding: EdgeInsets.all(24),
+            
+          ),
         ));
   }
 }
