@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
               BottomNavigationBarItem(
                 label: "radio",
                 icon: ImageIcon(
-                  AssetImage("assets/images/radio_image.png"),
+                  AssetImage("assets/images/icon_radio.png"),
                 ),
               ),
               BottomNavigationBarItem(
