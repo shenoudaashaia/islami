@@ -3,7 +3,9 @@ import 'package:flutter_new_test/tabs/hadeth/hadeth_tap.dart';
 import 'package:flutter_new_test/tabs/quran/guran_tap.dart';
 import 'package:flutter_new_test/tabs/radio/radio_tap.dart';
 import 'package:flutter_new_test/tabs/sebha/sebha_tap.dart';
+import 'package:flutter_new_test/tabs/settings/setting_provider.dart';
 import 'package:flutter_new_test/tabs/settings/settings_tap.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = "/";
@@ -23,10 +25,16 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
+    SettingProvider settingProvider = Provider.of<SettingProvider>(context);
+
     return Container(
       decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/default_bg.png"))),
+        image: DecorationImage(
+          image: AssetImage(
+            Provider.of<SettingProvider>(context).BackgroundImagePath,
+          ),
+        ),
+      ),
       child: Scaffold(
         appBar: AppBar(
           title: Text("إسلامي"),

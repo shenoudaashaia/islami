@@ -1,4 +1,4 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -36,8 +36,20 @@ class _SebhaTapState extends State<SebhaTap> {
             margin: EdgeInsets.only(top: 80),
             child: Transform.rotate(
               angle: angle,
-              child: Image.asset(
-                "assets/images/body_sebha_logo.png",
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    angle += 1;
+                    count++;
+                    if (count % 33 == 0 && count != 0) {
+                      int wordIndex = (count ~/ 33 - 1) % words.length;
+                      text = words[wordIndex];
+                    }
+                  });
+                },
+                child: Image.asset(
+                  "assets/images/body_sebha_logo.png",
+                ),
               ),
             ),
           ),
@@ -66,26 +78,25 @@ class _SebhaTapState extends State<SebhaTap> {
           height: 10,
         ),
         ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Apptheme.lightPrimary,
-            ),
-            onPressed: () {
-              setState(() {
-                angle += 1;
-                count++;
-                if (count % 33 == 0 && count != 0) {
-                  int wordIndex = (count ~/ 33 - 1) % words.length;
-                  text = words[wordIndex];
-                }
-              });
-            },
-            child: Text(
-              "$text",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w400),
-            )),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Apptheme.lightPrimary,
+          ),
+          onPressed: () {
+            setState(() {
+              angle += 1;
+              count++;
+              if (count % 33 == 0 && count != 0) {
+                int wordIndex = (count ~/ 33 - 1) % words.length;
+                text = words[wordIndex];
+              }
+            });
+          },
+          child: Text(
+            "$text",
+            style: TextStyle(
+                color: Colors.white, fontSize: 25, fontWeight: FontWeight.w400),
+          ),
+        ),
         Row(),
       ],
     );
