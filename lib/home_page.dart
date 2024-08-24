@@ -6,6 +6,7 @@ import 'package:flutter_new_test/tabs/sebha/sebha_tap.dart';
 import 'package:flutter_new_test/tabs/settings/setting_provider.dart';
 import 'package:flutter_new_test/tabs/settings/settings_tap.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = "/";
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("إسلامي"),
+          title: Text(AppLocalizations.of(context)!.islami),
         ),
         body: taps[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
@@ -48,34 +49,35 @@ class _HomePageState extends State<HomePage> {
             },
             items: [
               BottomNavigationBarItem(
-                label: "quran",
+                label: AppLocalizations.of(context)!.quran,
                 icon: ImageIcon(
                   AssetImage("assets/images/icon_quran.png"),
                 ),
               ),
               BottomNavigationBarItem(
-                label: "hadeth",
+                label:AppLocalizations.of(context)!.hadeth,
                 icon: ImageIcon(
                   AssetImage("assets/images/icon_hadeth.png"),
                 ),
               ),
               BottomNavigationBarItem(
-                label: "sebha",
+                label:AppLocalizations.of(context)!.sebha,
                 icon: ImageIcon(
                   AssetImage("assets/images/icon_sebha.png"),
                 ),
               ),
               BottomNavigationBarItem(
-                label: "radio",
+                label:AppLocalizations.of(context)!.radio,
                 icon: ImageIcon(
                   AssetImage("assets/images/radio_image.png"),
                 ),
               ),
               BottomNavigationBarItem(
-                label: "settings",
+                label:AppLocalizations.of(context)!.settings,
                 icon: Icon(Icons.settings_outlined),
               ),
-            ]),
+            ]
+            ),
       ),
     );
   }

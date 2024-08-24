@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_new_test/app_theme.dart';
 import 'package:flutter_new_test/tabs/settings/setting_provider.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SettingsTap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class SettingsTap extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Dark Mode",
+                AppLocalizations.of(context)!.darkMode,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               Switch(
@@ -31,7 +31,7 @@ class SettingsTap extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Language",
+                AppLocalizations.of(context)!.language,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               DropdownButtonHideUnderline(
